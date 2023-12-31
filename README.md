@@ -61,7 +61,7 @@ in the distribution of intensities in the spatial domain.
 From the DCT vector, we choose the index with the second largest energy
 or absolute value as a feature to compute the discriminating function
 with. The class-conditional probabilities,
-$P_{X|Y}\left( x \middle| i \right)$, based on the feature parameter x
+$`P_{X|Y}\left( x \middle| i \right)`$, based on the feature parameter x
 as defined above, was estimated by constructing a histogram of such
 feature values based on the training data given and normalizing it with
 the total number training examples for each class. The probabilities for
@@ -88,13 +88,13 @@ height="2.5892311898512688in"}
 
 In parametric approaches, our assumption is that we have an independent
 and identically distributed sample
-$D = \left\{ x_{1},x_{2},\ldots\ ,\ x_{N} \right\}.\ \ $We assume the
+$`D = \left\{ x_{1},x_{2},\ldots\ ,\ x_{N} \right\}.\ \ `$We assume the
 samples x~i~'s are drawn from some known probability density family,
 P~X~(x; θ), parameterized by the vector θ, for example Gaussian. If we
 assume the density of individual sample, we know the likelihood of the
 entire dataset as the samples are i.i.d.
 
-$$P_{T}(D;\theta) = \prod_{i = 1}^{N}{P_{X}\left( x_{i};\theta \right)}$$
+$`P_{T}(D;\theta) = \prod_{i = 1}^{N}{P_{X}\left( x_{i};\theta \right)}`$
 
 The main advantage of this method is that if we estimate the parameters
 of the distribution: for example, mean and variance for a Gaussian
@@ -109,15 +109,15 @@ Bayesian parameter estimation.
 
 In ML estimation, we search for the value of θ that maximizes the likelihood of the sample. For convenience, we can maximize its log(.) in order to convert the product into a sum and to lead to further computational simplification. Then our classification problem can be summed up by these two equations,
 
-$$i^{*}(x) = \begin{matrix}
+$` i^{*}(x) = \begin{matrix}
 argmax \\
 i \\
-\end{matrix}\left( \ \log{P_{X|Y}\left( x \middle| i;\theta_{i}^{*} \right)} + \log{P_{Y}(i)} \right)$$
+\end{matrix}\left( \ \log{P_{X|Y}\left( x \middle| i;\theta_{i}^{*} \right)} + \log{P_{Y}(i)} \right) `$
 
-$$\theta_{i}^{*} = \begin{matrix}
+$` \theta_{i}^{*} = \begin{matrix}
 argmax \\
 \theta \\
-\end{matrix}P_{T|Y}(D|i,\theta)$$
+\end{matrix}P_{T|Y}(D|i,\theta) `$
 
 When we apply ML into our problem, we assume that the class conditional densities are multivariate Gaussians of 64 dimensions. Then under ML assumption, the mean and variance of the Gaussian Distribution can be estimated by the sample mean and variance.
 
@@ -154,7 +154,7 @@ The main difference between Maximum Likelihood estimation and Bayesian estimatio
 
 For our problem, we assume $P_{x|\theta}(x|\theta)$ to be G(x, µ, Σ). The parameter θ here is only µ because Σ is computed from the sample covariance, which is a plausible tweak to have Σ.
 
-So, $`P_{x|\theta}(x|\theta)`$ =$`P_{x|\theta}(x|µ)`$ . In addition, we also assume the prior distribution, $`P_{\theta}(\theta) = P_{µ}(µ)`$ to be G(µ, $`µ~0~`$, $`Σ~0~`$). The two parameters, µ~0~ and Σ~0~, are given. By multiplying the likelihood and the prior, we can compute the posterior $P_{\theta|T}(µ|D)$ and thanks to a good property of the Gaussian distribution, $P_{\theta|T}(µ|D)$ is also a Gaussian distribution whose mean and variance can be calculated from µ~0~, Σ~0~, Σ.
+So, $`P_{x|\theta}(x|\theta)`$ =$`P_{x|\theta}(x|µ)`$ . In addition, we also assume the prior distribution, $`P_{\theta}(\theta) = P_{µ}(µ)`$ to be G(µ, $`µ~0~`$, $`Σ~0~`$). The two parameters, $`\mu_{0}`$ and Σ~0~, are given. By multiplying the likelihood and the prior, we can compute the posterior $P_{\theta|T}(µ|D)$ and thanks to a good property of the Gaussian distribution, $P_{\theta|T}(µ|D)$ is also a Gaussian distribution whose mean and variance can be calculated from $`\mu_{0}`$, Σ~0~, Σ.
 
 Then we can calculate the predictive distribution $P_{x|T}(x|D)$ or $P_{X|i}(x|i,D)$ for each class, which we can then plug into the BDR to get the classification.
 
@@ -162,8 +162,8 @@ $$P_{x|T}\left( x \middle| D \right) = \int_{}^{}{P_{x|\theta}\left( x \middle| 
 
 For our problem, we have used $\Sigma_{0}$ as a diagonal matrix,
 $` {(\Sigma_{0})}_{ii} = \alpha w_{i} `$, with given $\alpha$ and $w\ $
-and we see the performance of the model by changing the value of $\alpha$. We also use two different strategies for the value of µ~0~.
-For one strategy, the µ~0~ is different for the two classes , and for the second strategy its same for both classes. We apply these on four training dataset of different sizes.
+and we see the performance of the model by changing the value of $\alpha$. We also use two different strategies for the value of $`\mu_{0}`$.
+For one strategy, the $`\mu_{0}`$ is different for the two classes , and for the second strategy its same for both classes. We apply these on four training dataset of different sizes.
 
 ### 3.  **MAP Estimation:**
 The method of maximum a posteriori (MAP) estimation can be used to obtain unknown parameters that maximize the posterior probability density function. It is closely related to ML estimate but this method incorporates the prior distribution. This feature of MAP provides regularization of ML estimates. In MAP estimation, we assume that $P_{\theta|T}(\theta|D)$ has a narrow peak around its mode, thereby allowing us to avoid computing the integral in the Bayesian estimate.
