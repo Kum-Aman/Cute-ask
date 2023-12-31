@@ -10,7 +10,7 @@ Given an image of cheetah, we need to create a binary mask to segment
 the image into foreground(cheetah) and background(grass).
 Cheetah.bmp | cheetah_mask.bmp
 --- | ---
-![](image1.png) | ![](/vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png)
+![]("image1.png") | ![](/vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png)
 
 
 <picture>
