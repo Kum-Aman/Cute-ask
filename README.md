@@ -161,7 +161,7 @@ Then we can calculate the predictive distribution $P_{x|T}(x|D)$ or $P_{X|i}(x|i
 $$P_{x|T}\left( x \middle| D \right) = \int_{}^{}{P_{x|\theta}\left( x \middle| \mu \right)P_{\theta|T}\left( \mu \middle| D \right)\ d\mu}$$
 
 For our problem, we have used $\Sigma_{0}$ as a diagonal matrix,
-$${(\Sigma_{0})}_{ii} = \alpha w_{i}$$, with given $\alpha$ and $w\ $
+$$ {(\Sigma_{0})}_{ii} = \alpha w_{i} $$, with given $\alpha$ and $w\ $
 and we see the performance of the model by changing the value of $\alpha$. We also use two different strategies for the value of µ~0~.
 For one strategy, the µ~0~ is different for the two classes , and for the second strategy its same for both classes. We apply these on four training dataset of different sizes.
 
