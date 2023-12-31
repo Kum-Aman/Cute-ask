@@ -10,7 +10,7 @@ Given an image of cheetah, we need to create a binary mask to segment
 the image into foreground(cheetah) and background(grass).
 
 ![A cheetah in a field Description automatically
-generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/image1.png){width="2.438775153105862in"
+generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image1.png){width="2.438775153105862in"
 height="2.3059700349956254in"} ![A white silhouette of a rat Description
 automatically
 generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png){width="2.47959208223972in"
