@@ -8,13 +8,9 @@ for detailed explanation.
 
 Given an image of cheetah, we need to create a binary mask to segment
 the image into foreground(cheetah) and background(grass).
-
-![A cheetah in a field Description automatically
-generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image1.png) ![A white silhouette of a rat Description
-automatically
-generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png)
-
-> Cheetah.bmp cheetah_mask.bmp
+Cheetah.bmp | cheetah_mask.bmp
+--- | ---
+![](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image1.png) | ![](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png)
 
 The mask on the right is given to check the performance of our model i.e
 compare our masks to this given mask.
