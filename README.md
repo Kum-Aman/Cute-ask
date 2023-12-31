@@ -4,16 +4,16 @@ assignments for the course ECE 271A at UCSD for Fall 2023.
 This is a brief summary of the solution. Refer the pdf in each folder
 for detailed explanation.
 
-**Core Problem**
+# **Core Problem**
 
 Given an image of cheetah, we need to create a binary mask to segment
 the image into foreground(cheetah) and background(grass).
 
 ![A cheetah in a field Description automatically
-generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image1.png){width="2.438775153105862in"
+generated](vertopal4a86ab8f50ea4ec088e9268a9851090b/media/image1.png){width="2.438775153105862in"
 height="2.3059700349956254in"} ![A white silhouette of a rat Description
 automatically
-generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png){width="2.47959208223972in"
+generated](vertopal4a86ab8f50ea4ec088e9268a9851090b/media/image2.png){width="2.47959208223972in"
 height="2.3326531058617674in"}
 
 > Cheetah.bmp cheetah_mask.bmp
@@ -21,7 +21,7 @@ height="2.3326531058617674in"}
 The mask on the right is given to check the performance of our model i.e
 compare our masks to this given mask.
 
-**Problem Formulation:**
+# **Problem Formulation:**
 
 For classification purposes, Bayesian discrimination rule (BDR) is
 applied with minimum probability of error criteria. Representing each
@@ -42,7 +42,7 @@ discrete cosine transform (DCT) is performed on the blocks. To get a
 one-dimensional feature vector, the resulting transformed block is
 rearranged following zig-zag pattern.
 
-**Training Data:**
+# **Training Data:**
 
 As a training data we are given a dataset consisting of 64 DCT
 coefficients of cheetah and grass pixels. The file
@@ -52,9 +52,9 @@ training vector) for each of the classes. There are two matrices,
 ***TrainsampleDCT_BG*** and ***TrainsampleDCT_FG*** for foreground and
 background samples respectively.
 
-**Solution:**
+# **Solution:**
 
-1.  **Second Maximum Energy Method:**
+## 1.  **Second Maximum Energy Method:**
 
 The first method is very simple and uses only one feature of the sample
 vector, which is called second maximum energy method. Unlike the others,
@@ -90,7 +90,7 @@ This method produces the following mask with a probability of error of
 ![](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image4.png){width="2.7511865704286964in"
 height="2.5892311898512688in"}
 
-2.  **Parametric Methods:**
+## 2.  **Parametric Methods:**
 
 In parametric approaches, our assumption is that we have an independent
 and identically distributed sample
@@ -111,7 +111,7 @@ we then use for classification. There are two methods we will discuss to
 estimate the parameters of a distribution: Maximum Likelihood (ML) and
 Bayesian parameter estimation.
 
-1.  **Maximum Likelihood (ML) Estimation:**
+### 1.  **Maximum Likelihood (ML) Estimation:**
 
 > In ML estimation, we search for the value of θ that maximizes the
 > likelihood of the sample. For convenience, we can maximize its log(.)
@@ -194,7 +194,7 @@ height="2.2459219160104986in"}
 > should only consider the useful dimensions rather than all to get a
 > better accuracy.
 
-2.  **Bayesian Parametric Estimation:**
+### 2.  **Bayesian Parametric Estimation:**
 
 > The main difference between Maximum Likelihood estimation and Bayesian
 > estimation is how we look at the parameter θ (mean and variance for
@@ -229,7 +229,7 @@ ${(\Sigma_{0})}_{ii} = \alpha w_{i}$, with given $\alpha$ and $w\ $
 > the second strategy its same for both classes. We apply these on four
 > training dataset of different sizes.
 
-3.  **MAP Estimation:**
+### 3.  **MAP Estimation:**
 
 > The method of maximum a posteriori (MAP) estimation can be used to
 > obtain unknown parameters that maximize the posterior probability
@@ -257,7 +257,7 @@ argmax \\
 > understand the relative performance of these three parametric methods
 > on different sized datasets and for different priors.
 
-3.  **Expectation- Maximization (EM) algorithm:**
+## 3.  **Expectation- Maximization (EM) algorithm:**
 
 EM algorithm is a powerful algorithm for finding maximum likelihood
 estimates with missing data. For our problem, we assume that the class
