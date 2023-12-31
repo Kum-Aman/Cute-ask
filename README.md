@@ -69,7 +69,7 @@ the histogram bins are as such equivalent to the maximum likelihood
 estimates for a multinomial likelihood with number of different possible
 outcomes equal to the number of bins in the histogram.
 
-Similarly, the class priors, P~Y~(i) were estimated by dividing the
+Similarly, the class priors, $`P_{Y}`$(i) were estimated by dividing the
 number of class examples in the training data with the total number of
 training examples.
 
