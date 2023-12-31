@@ -75,14 +75,12 @@ training examples.
 
 ![A graph of a graph of a graph Description automatically generated with
 medium
-confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image3.jpeg){width="4.693876859142607in"
-height="2.795264654418198in"}
+confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image3.jpeg)
 
 This method produces the following mask with a probability of error of
 16.63%.
 
-![](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image4.png){width="2.7511865704286964in"
-height="2.5892311898512688in"}
+![](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image4.png)
 
 ## 2.  **Parametric Methods:**
 
@@ -123,13 +121,13 @@ When we apply ML into our problem, we assume that the class conditional densitie
 
 Given the training samples in ***TrainingSamplesDCT_8\_new.mat ,*** we estimate the mean and the variance of the likelihood function $P_{X|Y}\left( x \middle| i \right)$. The prior probability is the same as the previous method, as it was the maximum likelihood estimate. Here, using these estimations we can visualize the feature distribution for all 64 features. The plots will look like these.
 
-![A group of graphs showing the features of a function Description automatically generated with medium confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image5.jpeg){width="2.8179352580927386in" height="2.1122451881014874in"} | ![A collection of graphs showing the features of a function Description automatically generated with medium confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image6.jpeg){:width="2.8043186789151355in" height="2.102040682414698in"}
+![A group of graphs showing the features of a function Description automatically generated with medium confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image5.jpeg) | ![A collection of graphs showing the features of a function Description automatically generated with medium confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image6.jpeg)
 
 Now, the best features for the classification purpose will be where there is a considerable difference between $P_{X|Y}\left( X \middle| cheetah \right)$ and $P_{X|Y}(X|grass)$ for all x's. Except feature 1, all the other features overlap each other with an almost similar mean. So, we choose the distributions based on the spread(variance). By a visual inspection, we choose the best 8 features to be \[1,7,8,9,12,14,18,27\] and the worst 8 features to be \[3,4,5,59,60,62,63,64\].
 
 By keeping the plots side by side , we can clearly see the difference.
 
-![A group of graphs showing the features of a model Description automatically generated with medium confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image7.jpeg){width="2.858908573928259in" height="2.1428576115485565in"}![A collection of graphs showing the worst features Description automatically generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image8.jpeg){width="2.831679790026247in" height="2.122448600174978in"}
+![A group of graphs showing the features of a model Description automatically generated with medium confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image7.jpeg) | ![A collection of graphs showing the worst features Description automatically generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image8.jpeg)
 
 For the best features, the two conditional distributions are clearly separated from each other, while in the worst features they are overlapping each other. Which means worst features are nearly same for both classes, and thus not reliable for classification purpose.
 
@@ -140,11 +138,9 @@ With 64 features, P(error) = 8%
 With 8 best features, P(error) = 5%
 
 ![A white object with black text Description automatically
-generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image9.jpg){width="2.2142858705161856in"
-height="2.225411198600175in"} ![A white silhouette of a cat Description
+generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image9.jpg) | ![A white silhouette of a cat Description
 automatically
-generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image10.jpg){width="2.2346937882764655in"
-height="2.2459219160104986in"}
+generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image10.jpg)
 
 We can see using the 8 best features gives us a better result than using all the 64 features. Its because all the 64 features include those features which have a similar density function and thus cannot distinguish the classes. So, they skew the classification decision and give more error. This is a case of high dimensionality, where we should only consider the useful dimensions rather than all to get a better accuracy.
 
@@ -206,8 +202,7 @@ initializations on the final probability of error. In addition, we also
 look at the effect that the dimensionality of the feature vector has on
 the probability of error.
 
-![](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image11.emf){width="3.7603390201224847in"
-height="2.8202548118985127in"}
+![](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image11.emf)
 
 We can observe that the error decreases with the increase in dimensions.
 But also, after a certain value of dimensions it started to increase.
