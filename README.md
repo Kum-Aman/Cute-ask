@@ -154,7 +154,7 @@ The main difference between Maximum Likelihood estimation and Bayesian estimatio
 
 For our problem, we assume $P_{x|\theta}(x|\theta)$ to be G(x, µ, Σ). The parameter θ here is only µ because Σ is computed from the sample covariance, which is a plausible tweak to have Σ.
 
-So, $P_{x|\theta}(x|\theta)$ =$P_{x|\theta}(x|µ)$ . In addition, we also assume the prior distribution, $P_{\theta}(\theta) = P_{µ}(µ)$ to be G(µ, µ~0~, Σ~0~). The two parameters, µ~0~ and Σ~0~, are given. By multiplying the likelihood and the prior, we can compute the posterior $P_{\theta|T}(µ|D)$ and thanks to a good property of the Gaussian distribution, $P_{\theta|T}(µ|D)$ is also a Gaussian distribution whose mean and variance can be calculated from µ~0~, Σ~0~, Σ.
+So, $`P_{x|\theta}(x|\theta)`$ =$`P_{x|\theta}(x|µ)`$ . In addition, we also assume the prior distribution, $`P_{\theta}(\theta) = P_{µ}(µ)`$ to be G(µ, $`µ~0~`$, $`Σ~0~`$). The two parameters, µ~0~ and Σ~0~, are given. By multiplying the likelihood and the prior, we can compute the posterior $P_{\theta|T}(µ|D)$ and thanks to a good property of the Gaussian distribution, $P_{\theta|T}(µ|D)$ is also a Gaussian distribution whose mean and variance can be calculated from µ~0~, Σ~0~, Σ.
 
 Then we can calculate the predictive distribution $P_{x|T}(x|D)$ or $P_{X|i}(x|i,D)$ for each class, which we can then plug into the BDR to get the classification.
 
