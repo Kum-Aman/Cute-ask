@@ -11,7 +11,7 @@ the image into foreground(cheetah) and background(grass).
 Cheetah.bmp | cheetah_mask.bmp
 --- | ---
 ![](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image1.png) | ![](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png)
-
+<img src="vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image1.png" width="128"/>
 The mask on the right is given to check the performance of our model i.e
 compare our masks to this given mask.
 
