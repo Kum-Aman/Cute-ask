@@ -86,9 +86,9 @@ This method produces the following mask with a probability of error of
 
 In parametric approaches, our assumption is that we have an independent
 and identically distributed sample
-$`D = \left\{ x_{1},x_{2},\ldots\ ,\ x_{N} \right\}.\ \ `$We assume the
-samples x~i~'s are drawn from some known probability density family,
-P~X~(x; θ), parameterized by the vector θ, for example Gaussian. If we
+$`D = \left\{ x_{1},x_{2},\ldots\ ,\ x_{N} \right\}.\ \ `$ We assume the
+samples $`x_{i}`$'s are drawn from some known probability density family,
+$`P_{X}`$(x; θ), parameterized by the vector θ, for example Gaussian. If we
 assume the density of individual sample, we know the likelihood of the
 entire dataset as the samples are i.i.d.
 
