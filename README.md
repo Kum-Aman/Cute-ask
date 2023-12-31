@@ -221,7 +221,7 @@ height="2.2459219160104986in"}
 $$P_{x|T}\left( x \middle| D \right) = \int_{}^{}{P_{x|\theta}\left( x \middle| \mu \right)P_{\theta|T}\left( \mu \middle| D \right)\ d\mu}$$
 
 For our problem, we have used $\Sigma_{0}$ as a diagonal matrix,
-${(\Sigma_{0})}_{ii} = \alpha w_{i},\ with\ given\ \alpha\ and\ w\ $
+${(\Sigma_{0})}_{ii} = \alpha w_{i}$, with given $\alpha$ and $w\ $
 
 > and we see the performance of the model by changing the value of
 > $\alpha$. We also use two different strategies for the value of µ~0~.
