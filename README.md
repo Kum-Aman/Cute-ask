@@ -11,12 +11,10 @@ the image into foreground(cheetah) and background(grass).
 Cheetah.bmp | cheetah_mask.bmp
 --- | ---
 ![](/vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image1.png) | ![](/vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png)
-<img src="vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image1.png" width="128"/>
+
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/25423296/163456776-7f95b81a-f1ed-45f7-b7ab-8fa810d529fa.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
-  <img alt="Shows an illustrated sun in light mode and a moon with stars in dark mode." src="https://user-images.githubusercontent.com/25423296/163456779-a8556205-d0a5-45e2-ac17-42d089e3c3f8.png">
+ <img src="vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image1.png" />
 </picture>
 The mask on the right is given to check the performance of our model i.e
 compare our masks to this given mask.
