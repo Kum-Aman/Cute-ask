@@ -12,8 +12,7 @@ the image into foreground(cheetah) and background(grass).
 ![A cheetah in a field Description automatically
 generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image1.png) ![A white silhouette of a rat Description
 automatically
-generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png){width="2.47959208223972in"
-height="2.3326531058617674in"}
+generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png)
 
 > Cheetah.bmp cheetah_mask.bmp
 
