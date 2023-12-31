@@ -107,11 +107,7 @@ Bayesian parameter estimation.
 
 ### 1.  **Maximum Likelihood (ML) Estimation:**
 
-> In ML estimation, we search for the value of θ that maximizes the
-> likelihood of the sample. For convenience, we can maximize its log(.)
-> in order to convert the product into a sum and to lead to further
-> computational simplification. Then our classification problem can be
-> summed up by these two equations,
+In ML estimation, we search for the value of θ that maximizes the likelihood of the sample. For convenience, we can maximize its log(.) in order to convert the product into a sum and to lead to further computational simplification. Then our classification problem can be summed up by these two equations,
 
 $$i^{*}(x) = \begin{matrix}
 argmax \\
@@ -123,49 +119,19 @@ argmax \\
 \theta \\
 \end{matrix}P_{T|Y}(D|i,\theta)$$
 
-> When we apply ML into our problem, we assume that the class
-> conditional densities are multivariate Gaussians of 64 dimensions.
-> Then under ML assumption, the mean and variance of the Gaussian
-> Distribution can be estimated by the sample mean and variance.
->
-> Given the training samples in ***TrainingSamplesDCT_8\_new.mat ,*** we
-> estimate the mean and the variance of the likelihood function
-> $P_{X|Y}\left( x \middle| i \right)$. The prior probability is the
-> same as the previous method, as it was the maximum likelihood
-> estimate. Here, using these estimations we can visualize the feature
-> distribution for all 64 features. The plots will look like these.
->
-> ![A group of graphs showing the features of a function Description
-> automatically generated with medium
-> confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image5.jpeg){width="2.8179352580927386in"
-> height="2.1122451881014874in"} | ![A collection of graphs showing the
-> features of a function Description automatically generated with medium
-> confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image6.jpeg){:width="2.8043186789151355in"
-> height="2.102040682414698in"}
->
-> Now, the best features for the classification purpose will be where
-> there is a considerable difference between
-> $P_{X|Y}\left( X \middle| cheetah \right)$ and $P_{X|Y}(X|grass)$ for
-> all x's. Except feature 1, all the other features overlap each other
-> with an almost similar mean. So, we choose the distributions based on
-> the spread(variance). By a visual inspection, we choose the best 8
-> features to be \[1,7,8,9,12,14,18,27\] and the worst 8 features to be
-> \[3,4,5,59,60,62,63,64\].
+When we apply ML into our problem, we assume that the class conditional densities are multivariate Gaussians of 64 dimensions. Then under ML assumption, the mean and variance of the Gaussian Distribution can be estimated by the sample mean and variance.
+
+Given the training samples in ***TrainingSamplesDCT_8\_new.mat ,*** we estimate the mean and the variance of the likelihood function $P_{X|Y}\left( x \middle| i \right)$. The prior probability is the same as the previous method, as it was the maximum likelihood estimate. Here, using these estimations we can visualize the feature distribution for all 64 features. The plots will look like these.
+
+![A group of graphs showing the features of a function Description automatically generated with medium confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image5.jpeg){width="2.8179352580927386in" height="2.1122451881014874in"} | ![A collection of graphs showing the features of a function Description automatically generated with medium confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image6.jpeg){:width="2.8043186789151355in" height="2.102040682414698in"}
+
+Now, the best features for the classification purpose will be where there is a considerable difference between $P_{X|Y}\left( X \middle| cheetah \right)$ and $P_{X|Y}(X|grass)$ for all x's. Except feature 1, all the other features overlap each other with an almost similar mean. So, we choose the distributions based on the spread(variance). By a visual inspection, we choose the best 8 features to be \[1,7,8,9,12,14,18,27\] and the worst 8 features to be \[3,4,5,59,60,62,63,64\].
 
 By keeping the plots side by side , we can clearly see the difference.
 
-> ![A group of graphs showing the features of a model Description
-> automatically generated with medium
-> confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image7.jpeg){width="2.858908573928259in"
-> height="2.1428576115485565in"}![A collection of graphs showing the
-> worst features Description automatically
-> generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image8.jpeg){width="2.831679790026247in"
-> height="2.122448600174978in"}
->
-> For the best features, the two conditional distributions are clearly
-> separated from each other, while in the worst features they are
-> overlapping each other. Which means worst features are nearly same for
-> both classes, and thus not reliable for classification purpose.
+![A group of graphs showing the features of a model Description automatically generated with medium confidence](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image7.jpeg){width="2.858908573928259in" height="2.1428576115485565in"}![A collection of graphs showing the worst features Description automatically generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image8.jpeg){width="2.831679790026247in" height="2.122448600174978in"}
+
+For the best features, the two conditional distributions are clearly separated from each other, while in the worst features they are overlapping each other. Which means worst features are nearly same for both classes, and thus not reliable for classification purpose.
 
 After creating the mask, we can calculate the probability of error.
 
@@ -180,59 +146,28 @@ automatically
 generated](vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image10.jpg){width="2.2346937882764655in"
 height="2.2459219160104986in"}
 
-> We can see using the 8 best features gives us a better result than
-> using all the 64 features. Its because all the 64 features include
-> those features which have a similar density function and thus cannot
-> distinguish the classes. So, they skew the classification decision and
-> give more error. This is a case of high dimensionality, where we
-> should only consider the useful dimensions rather than all to get a
-> better accuracy.
+We can see using the 8 best features gives us a better result than using all the 64 features. Its because all the 64 features include those features which have a similar density function and thus cannot distinguish the classes. So, they skew the classification decision and give more error. This is a case of high dimensionality, where we should only consider the useful dimensions rather than all to get a better accuracy.
 
 ### 2.  **Bayesian Parametric Estimation:**
 
-> The main difference between Maximum Likelihood estimation and Bayesian
-> estimation is how we look at the parameter θ (mean and variance for
-> gaussian distribution) : a fixed value or a random variable. Bayesian
-> estimation assumes that θ is a random variable with a prior density
-> $P_{\theta}(\theta)$.
->
-> For our problem, we assume $P_{x|\theta}(x|\theta)$ to be G(x, µ, Σ).
-> The parameter θ here is only µ because Σ is computed from the sample
-> covariance, which is a plausible tweak to have Σ.
->
-> So, $P_{x|\theta}(x|\theta)$ =$P_{x|\theta}(x|µ)$ . In addition, we
-> also assume the prior distribution, $P_{\theta}(\theta) = P_{µ}(µ)$ to
-> be G(µ, µ~0~, Σ~0~). The two parameters, µ~0~ and Σ~0~, are given. By
-> multiplying the likelihood and the prior, we can compute the posterior
-> $P_{\theta|T}(µ|D)$ and thanks to a good property of the Gaussian
-> distribution, $P_{\theta|T}(µ|D)$ is also a Gaussian distribution
-> whose mean and variance can be calculated from µ~0~, Σ~0~, Σ.
->
-> Then we can calculate the predictive distribution $P_{x|T}(x|D)$ or
-> $P_{X|i}(x|i,D)$ for each class, which we can then plug into the BDR
-> to get the classification.
+The main difference between Maximum Likelihood estimation and Bayesian estimation is how we look at the parameter θ (mean and variance for gaussian distribution) : a fixed value or a random variable. Bayesian estimation assumes that θ is a random variable with a prior density $P_{\theta}(\theta)$.
+
+For our problem, we assume $P_{x|\theta}(x|\theta)$ to be G(x, µ, Σ). The parameter θ here is only µ because Σ is computed from the sample covariance, which is a plausible tweak to have Σ.
+
+So, $P_{x|\theta}(x|\theta)$ =$P_{x|\theta}(x|µ)$ . In addition, we also assume the prior distribution, $P_{\theta}(\theta) = P_{µ}(µ)$ to be G(µ, µ~0~, Σ~0~). The two parameters, µ~0~ and Σ~0~, are given. By multiplying the likelihood and the prior, we can compute the posterior $P_{\theta|T}(µ|D)$ and thanks to a good property of the Gaussian distribution, $P_{\theta|T}(µ|D)$ is also a Gaussian distribution whose mean and variance can be calculated from µ~0~, Σ~0~, Σ.
+
+Then we can calculate the predictive distribution $P_{x|T}(x|D)$ or $P_{X|i}(x|i,D)$ for each class, which we can then plug into the BDR to get the classification.
 
 $$P_{x|T}\left( x \middle| D \right) = \int_{}^{}{P_{x|\theta}\left( x \middle| \mu \right)P_{\theta|T}\left( \mu \middle| D \right)\ d\mu}$$
 
 For our problem, we have used $\Sigma_{0}$ as a diagonal matrix,
 ${(\Sigma_{0})}_{ii} = \alpha w_{i}$, with given $\alpha$ and $w\ $
-
-> and we see the performance of the model by changing the value of
-> $\alpha$. We also use two different strategies for the value of µ~0~.
-> For one strategy, the µ~0~ is different for the two classes , and for
-> the second strategy its same for both classes. We apply these on four
-> training dataset of different sizes.
+and we see the performance of the model by changing the value of $\alpha$. We also use two different strategies for the value of µ~0~.
+For one strategy, the µ~0~ is different for the two classes , and for the second strategy its same for both classes. We apply these on four training dataset of different sizes.
 
 ### 3.  **MAP Estimation:**
-
-> The method of maximum a posteriori (MAP) estimation can be used to
-> obtain unknown parameters that maximize the posterior probability
-> density function. It is closely related to ML estimate but this method
-> incorporates the prior distribution. This feature of MAP provides
-> regularization of ML estimates. In MAP estimation, we assume that
-> $P_{\theta|T}(\theta|D)$ has a narrow peak around its mode, thereby
-> allowing us to avoid computing the integral in the Bayesian estimate.
-> As a result, our decision function becomes,
+The method of maximum a posteriori (MAP) estimation can be used to obtain unknown parameters that maximize the posterior probability density function. It is closely related to ML estimate but this method incorporates the prior distribution. This feature of MAP provides regularization of ML estimates. In MAP estimation, we assume that $P_{\theta|T}(\theta|D)$ has a narrow peak around its mode, thereby allowing us to avoid computing the integral in the Bayesian estimate.
+ As a result, our decision function becomes,
 
 $$i^{*}(x) = \begin{matrix}
 argmax \\
@@ -247,9 +182,7 @@ argmax \\
 \theta \\
 \end{matrix}P_{T|Y,\theta}\left( D \middle| i,\theta \right)P_{\theta|Y}\left( \theta \middle| i \right)\ $$
 
-> Refer the pdf on the ***Bayesian Parametric Estimation folder*** to
-> understand the relative performance of these three parametric methods
-> on different sized datasets and for different priors.
+Refer the pdf on the ***Bayesian Parametric Estimation folder*** to understand the relative performance of these three parametric methods on different sized datasets and for different priors.
 
 ## 3.  **Expectation- Maximization (EM) algorithm:**
 
