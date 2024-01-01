@@ -11,7 +11,7 @@ the image into foreground(cheetah) and background(grass).
 Cheetah.bmp | cheetah_mask.bmp
 --- | ---
 ![](https://imgur.com/pr6aaoT) | ![](/vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png)
-![]("image1.png") | ![](/vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png)
+![]("235.jpeg") | ![](/vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png)
 <p>
  <img src="./vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png">
 </p>
