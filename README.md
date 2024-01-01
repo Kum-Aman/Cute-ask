@@ -13,7 +13,7 @@ Cheetah.bmp | cheetah_mask.bmp
 ![](https://imgur.com/pr6aaoT) | ![](/vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png)
 ![]("image1.png") | ![](/vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png)
 <p>
- <img src="./image1.png">
+ <img src="./vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png">
 </p>
 <p>
 <img src="https://imgur.com/pr6aaoT" />
