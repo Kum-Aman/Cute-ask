@@ -16,6 +16,9 @@ Cheetah.bmp | cheetah_mask.bmp
  <img src="./vertopal_4a86ab8f50ea4ec088e9268a9851090b/media/image2.png">
 </p>
 <p>
+ <img src="./235.jpeg">
+</p>
+<p>
 <img src="https://imgur.com/pr6aaoT" />
 </p>
  <picture>
